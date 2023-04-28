@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeLeaf.org"
+       th:replace="base::Layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TOEFL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<section>
+    <div class="container bg-white">
+        <div class="row justify-content-start align-items-center my-5" >
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img class="w-100 " style="height: 950px;"  src="/toefl2.jpg" alt="toefl2"/>
+            </div>
+            <div class="col-md-6 ">
+                <div class="card">
+                    <div class="card-header text-center fs-4">TOEFL Examination Details</div>
+                    <th:block th:if="${session.msg}">
+                        <p class="text-center fs-4 text-success">[[${session.msg}]]</p>
+                        <a th:href="@{/user/clearMessage3 }" class="mx-5">Clear message</a>
+                    </th:block>
+
+
+
+                   <div class="card-body">
+
+                        <form action="createTOEFL" method="post">
+
+                            <p>&#40;Required field are followed by *&#41;</p>
+
+                            <div class="mb-3">
+                                <label>Select Batch*</label>
+                                <select name="batch" id="batch" required>
+                                    <option value="" disabled selected>----Select Years----</option>
+                                </select>
+
+                                <script>
+                                    var select = document.getElementById("batch");
+                                    var currentYear = new Date().getFullYear();
+                                    for (var i = -25; i <= 25; i++) {
+                                        var option = document.createElement("option");
+                                        option.value = (currentYear+i) + "-" + (currentYear+i+4);
+                                        option.text = (currentYear+i) + "-" + (currentYear+i+4);
+                                        select.add(option);
+                                    }
+                                </script>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Enter the Branch*</label>
+                                <input type="text" name="branch" id="branch" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Enter your Appointment Number*</label> <input type="number" name="appointmentNumber"
+                                                                       class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Enter Your CollegeID*</label> <input type="text"
+                                                                      name="collegeID" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Enter Exam Date*</label> <input type="date" name="examDate"
+                                                                  class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Enter Listening Score</label> <input type="number" name="listeningScore"
+                                                                    class="form-control" required placeholder="Enter Score out of 30" min="0" max="30">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Enter reading Score </label> <input type="number"
+                                                                     name="readingScore" class="form-control" required placeholder="Enter Score out of 30" min="0" max="30">
+                            </div>
+							<div class="mb-3">
+                                <label>Enter Writing Score </label> <input type="number"
+                                                                     name="writingScore" class="form-control" required placeholder="Enter Score out of 30" min="0" max="30">
+                            </div>
+
+							<div class="mb-3">
+                                <label>Enter Speaking Score </label> <input type="number"
+                                                                     name="speakingScore" class="form-control" required placeholder="Enter Score out of 30" min="0" max="30">
+                            </div>
+
+							<div class="mb-3">
+                                <label>Enter Total Score </label> <input type="number"
+                                                                     name="Score" class="form-control" required placeholder="Enter Score out of 120" min="0" max="120">
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+                <br>
+                <a class="btn btn-primary" style="margin-left: 90%" th:href="@{toeflPDF}" >Next</a>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+</section>
+
+</body>
+</html>

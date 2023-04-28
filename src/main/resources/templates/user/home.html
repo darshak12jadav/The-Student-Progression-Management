@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org"
+      th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<section class="container">
+    <style>
+        /* CSS */
+        .button-79 {
+            backface-visibility: hidden;
+            background: #332cf2;
+            border: 0;
+            border-radius: .375rem;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular,Helvetica,sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            line-height: 1.3;
+            padding: 1rem 1.25rem;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transform: translateZ(0) scale(1);
+            transition: transform .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-79:disabled {
+            color: #787878;
+            cursor: auto;
+        }
+
+        .button-79:not(:disabled):hover {
+            transform: scale(1.05);
+        }
+
+        .button-79:not(:disabled):hover:active {
+            transform: scale(1.05) translateY(.125rem);
+        }
+
+        .button-79:focus {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:focus:before {
+            border-width: .125rem;
+            content: "";
+            left: calc(-1*.375rem);
+            pointer-events: none;
+            position: absolute;
+            top: calc(-1*.375rem);
+            transition: border-radius;
+            user-select: none;
+        }
+
+        .button-79:focus:not(:focus-visible) {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:not(:disabled):active {
+            transform: translateY(.125rem);
+        }
+    </style>
+    <div class="bg-white">
+        <div class="container p-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img class="w-100 h-100" src="/hello.gif" alt="hello"/>
+                </div>
+                <div class="col-md-6">
+                    <div>
+        <p>
+           <b> &nbsp; "Welcome back [[${userDetails.fullName}]]😊😊!!</b> Manage all your exam records with ease. Keep track of your GRE, TOEFL, IELTS, and GATE scores all in one place.
+            Review your progress and stay on top of your test-taking goals.
+            With our exam record management system, you can upload and store digital copies of your scorecard  and important documents. This means you'll always have easy access to your academic records whenever you need them.
+
+            In addition to tracking your scores, you can also set study goals, create study plans, and track your progress over time. Our system will help you stay on track and ensure you're making steady progress towards your academic and career goals.
+
+           <br> &nbsp;&nbsp;&nbsp;Our platform is designed to be user-friendly and intuitive, so you don't need to be a tech expert to use it. You can easily navigate the system, add new scores, update your information, and view your progress all from one centralized dashboard.
+
+            Our exam record management system is compatible with a range of standardized tests, including GRE, TOEFL, IELTS, and GATE. So no matter which exams you're taking, you can keep all of your scores in one place.
+
+            Finally, our system is completely secure and private. Your data is protected with state-of-the-art encryption and is only accessible by you, so you can rest assured that your personal information is safe.<br>Let's get started!"
+        </p>
+                    </div>
+                    <div class="text-center">
+                        <a th:href="@{/user/gre}">
+                    <button class="button-79" role="button">Let's do</button>
+                        </a>
+                    </div>
+
+    </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

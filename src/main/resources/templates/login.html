@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: Layout (~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<section>
+    <div class="bg-white">
+        <div class="container p-5">
+            <div class="row  d-flex align-items-center justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center fs-4">Login Page</div>
+                        <div th:if="${param.error}" class="alert alert-danger">
+<!--                            [[${session.SPRING_SECURITY_LAST_EXCEPTION}]] : -->
+                            Invalid credentials!!! 😱
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-success">
+                            Logout Successfully 😱
+                        </div>
+                        <div class="card-body">
+                            <form action="/login" method="post">
+                                <p>&#40;Required fields are followed by *&#41;</p>
+                                <div class="mb-3">
+                                    <label>Enter Email*</label> <input type="email" name="username"
+                                                                       class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Enter Password*</label> <input type="password"
+                                                                          name="password" class="form-control" required>
+                                </div>
+                                <button class="btn btn-primary col-md-12">Login</button>
+                            </form>
+                            <div class="text-center mt-2">
+                                <a href="loadForgetPassword" class="text-decoration-none">Forgot password?</a>
+                            </div>
+                            <div class="text-center mt-2">
+                                <a href="register" class="text-decoration-none">Don't have an Account?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 align-items-center">
+                    <img class="w-100 h-100" src="/login.gif" alt="login"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

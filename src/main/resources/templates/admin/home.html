@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <style>
+        /* CSS */
+        .button-79 {
+            backface-visibility: hidden;
+            background: #332cf2;
+            border: 0;
+            border-radius: .375rem;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular,Helvetica,sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            line-height: 1.3;
+            padding: 1rem 1.25rem;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transform: translateZ(0) scale(1);
+            transition: transform .2s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-79:disabled {
+            color: #787878;
+            cursor: auto;
+        }
+
+        .button-79:not(:disabled):hover {
+            transform: scale(1.05);
+        }
+
+        .button-79:not(:disabled):hover:active {
+            transform: scale(1.05) translateY(.125rem);
+        }
+
+        .button-79:focus {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:focus:before {
+            border-width: .125rem;
+            content: "";
+            left: calc(-1*.375rem);
+            pointer-events: none;
+            position: absolute;
+            top: calc(-1*.375rem);
+            transition: border-radius;
+            user-select: none;
+        }
+
+        .button-79:focus:not(:focus-visible) {
+            outline: 0 solid transparent;
+        }
+
+        .button-79:not(:disabled):active {
+            transform: translateY(.125rem);
+        }
+    </style>
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" >The Student Progression Management</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/admin/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="excel/excel1">Excel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="viewDetails">View Details</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" >Admin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-item"><h4>👨‍🎓</h4></li>
+                </ul>
+        </div>
+    </div>
+</nav>
+<section class="container">
+<div class="bg-white">
+    <div class="container p-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img class="w-100 h-100" src="/adminhome.gif" alt="admin home"/>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <p>
+                        <b> &nbsp; "Welcome back to The Student Progression Management System😊😊!!</b> As an administrator, you have access to a range of tools to manage student records and track their progress through their academic journey.
+
+                        <br> &nbsp;&nbsp;To get started, you can upload student details using an Excel file. This makes it easy to add multiple student records quickly and efficiently. Simply select the file, and the system will automatically populate the relevant fields with the data provided.
+
+                        <br>&nbsp;&nbsp;Once the student details have been uploaded, you can view their records for exams such as GER, TOEFL, IELTS, and GATE. This enables you to monitor their progress and identify any areas where they may need additional  support.
+
+                        <br>&nbsp;&nbsp;In addition to these features, you can also view student profiles record. We believe that this system will help you to streamline your administrative tasks, saving you time and resources, and enabling you to focus on providing the best possible support to your students.
+
+                        <br>&nbsp;&nbsp;Thank you for choosing the Student Progression Management System. If you have any questions or need assistance, please don't hesitate to contact our support team.
+
+                    </p>
+
+                </div>
+                <div class="text-align-left">
+                    <a th:href="@{/admin/excel/excel1}">
+                        <button class="button-79" role="button">Upload</button>
+                    </a>
+                    <a th:href="@{/admin/viewDetails}">
+                        <button class="button-79" role="button">View</button>
+                    </a>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

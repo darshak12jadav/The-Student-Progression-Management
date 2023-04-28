@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{base :: Layout (~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+<section>
+    <div class="bg-white">
+        <div class="container p-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img class="w-100" src="/register.gif" alt="register"/>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center fs-4">Register Page</div>
+
+                        <th:block th:if="${session.msg}">
+                            <p class="text-center fs-4 text-success">[[${session.msg}]]</p>
+                            <a  th:href="@{/clearMessage}" class="mx-5">Clear message</a>
+                        </th:block>
+
+                        <div class="card-body">
+                            <form action="createUser" method="post">
+                                <p>&#40;Required fields are followed by *&#41;</p>
+
+                                <div class="mb-3">
+                                    <label>Enter Full Name*</label>
+                                    <input type="text" name="fullName" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Enter Email*</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Enter MobileNo*</label>
+                                    <input type="tel" name="mobileno" class="form-control" required minlength="10" maxlength="10">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Enter Password*</label>
+                                    <input type="password" name="password" class="form-control" required>
+                                </div>
+
+                                <button class="btn btn-primary col-md-12">Register</button>
+
+                                <div class="text-center mt-2">
+                                    <a href="signin" class="text-decoration-none ">Already have an account?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

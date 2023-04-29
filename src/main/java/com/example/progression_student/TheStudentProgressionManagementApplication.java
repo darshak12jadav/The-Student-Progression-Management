@@ -11,7 +11,7 @@ public class TheStudentProgressionManagementApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TheStudentProgressionManagementApplication.class, args);
-        System.out.println("Welcome to The Student Progression Management !! \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E ");
+        System.out.println("Welcome to The Student Progression Management !!!!!! \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E");
     }
 
 }

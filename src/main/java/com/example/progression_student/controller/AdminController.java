@@ -129,22 +129,22 @@ public class AdminController {
                 if (students.size() > 0) {
                     boolean isSaved = this.student_details_service.save(file);
                     if (isSaved) {
-                        redirectAttributes.addFlashAttribute("message", "File uploaded successfully!");
+                        redirectAttributes.addFlashAttribute("message", "File uploaded successfully \uD83E\uDD73 \uD83E\uDD73!");
                     } else {
-                        redirectAttributes.addFlashAttribute("error", "Duplicate data found. Please upload a file with unique data.");
+                        redirectAttributes.addFlashAttribute("error", "Duplicate data found. Please upload a file with unique data \uD83E\uDD71 \uD83E\uDD71.");
                     }
                 } else {
-                    redirectAttributes.addFlashAttribute("error", "The uploaded file has an incorrect format or is missing a column or please check your Excel sheet name.");
+                    redirectAttributes.addFlashAttribute("error", "The uploaded file has an incorrect format or is missing a column or please check your Excel sheet name \uD83E\uDD71 \uD83E\uDD71.");
                 }
             } else {
-                redirectAttributes.addFlashAttribute("error", "Please upload an Excel file.");
+                redirectAttributes.addFlashAttribute("error", "Please upload an Excel file.\uD83E\uDD71 \uD83E\uDD71");
             }
         } catch (InvalidFormatException e) {
-            redirectAttributes.addFlashAttribute("error", "The uploaded file has an invalid format. Please upload a valid Excel file.");
+            redirectAttributes.addFlashAttribute("error", "The uploaded file has an invalid format. Please upload a valid Excel file.\uD83E\uDD71 \uD83E\uDD71");
         } catch (IOException e) {
-            redirectAttributes.addFlashAttribute("error", "There was an error reading the uploaded file. Please try again.");
+            redirectAttributes.addFlashAttribute("error", "There was an error reading the uploaded file. Please try again.\uD83E\uDD71 \uD83E\uDD71");
         } catch (Exception e) {
-            redirectAttributes.addFlashAttribute("error", "The uploaded file has an incorrect format or is missing a column or please check your Excel sheet name.");
+            redirectAttributes.addFlashAttribute("error", "The uploaded file has an incorrect format or is missing a column or please check your Excel sheet name.\uD83E\uDD71 \uD83E\uDD71");
         }
         return "redirect:/admin/excel/excel2";
     }
@@ -163,7 +163,7 @@ public class AdminController {
     public String greView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<GRE> greList = greService.getGREBatchAndBranch(batch, branch);
         if(greList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/greView2"; // replace with the name of your error page
         } else {
             model.addAttribute("greList", greList);
@@ -181,7 +181,7 @@ public class AdminController {
     public String gateView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<GATE> gateList = gateService.getByBatchAndBranch(batch, branch);
         if(gateList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/gateView2"; // replace with the name of your error page
         } else {
             model.addAttribute("gateList", gateList);
@@ -198,7 +198,7 @@ public class AdminController {
     public String toeflView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<TOEFL> toeflList = toeflService.getTOEFLByBatchAndBranch(batch, branch);
         if(toeflList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/toeflView2"; // replace with the name of your error page
         } else {
             model.addAttribute("toeflList", toeflList);
@@ -215,7 +215,7 @@ public class AdminController {
     public String ieltsView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<IELTS> ieltsList = ieltsService.getIELTSBatchAndBranch(batch, branch);
         if(ieltsList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/ieltsView2"; // replace with the name of your error page
         } else {
             model.addAttribute("ieltsList", ieltsList);
@@ -232,7 +232,7 @@ public class AdminController {
     public String studentView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<Student_Details> studList = student_details_service.getStudent_DetailsByBatchAndBranch(batch,branch);
         if(studList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/studentView2"; // replace with the name of your error page
         } else {
             model.addAttribute("studList", studList);
@@ -253,7 +253,7 @@ public class AdminController {
         List<FileEntity> filesList = fileService.getFileEntityByEmailId(emailID);
         System.out.println(filesList.size()+".........................");
         if(filesList.isEmpty()) {
-            model.addAttribute("errorMsg", "The College Id you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The College Id you're searching for is doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/resultView2"; // replace with the name of your error page
         } else {
             model.addAttribute("filesList", filesList);
@@ -301,7 +301,7 @@ public class AdminController {
     public String userView2(@RequestParam("email") String email, Model model) {
         UserDetails userList = userService.getUserDetailsByEmail(email);
         if(userList==null) {
-            model.addAttribute("errorMsg", "The User you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The User you're searching for  doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/userView2"; // replace with the name of your error page
         } else {
             model.addAttribute("userList",userList );
@@ -318,7 +318,7 @@ public class AdminController {
     public String catView2(@RequestParam("batch") String batch,@RequestParam("branch") String branch, Model model) {
         List<CAT> catList = catService.getCATByBatchAndBranch(batch, branch);
         if(catList.isEmpty()) {
-            model.addAttribute("errorMsg", "The details you're searching for is doesn't exist!!");
+            model.addAttribute("errorMsg", "The details you're searching for doesn't exist \uD83D\uDE0C \uD83D\uDE0C!!");
             return "admin/catView2"; // replace with the name of your error page
         } else {
             model.addAttribute("catList", catList);
